@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Dices, Sparkles, Zap, Clock, DollarSign, Users } from "lucide-react";
 import rouletteImage from "@/assets/roulette.jpg";
 import pokerImage from "@/assets/poker.jpg";
+import heroCasinoImage from "@/assets/hero-casino.jpg";
 
 const Games = () => {
   const gameDetails = [
@@ -24,7 +25,7 @@ const Games = () => {
     {
       title: "Roulette",
       icon: Dices,
-      image: rouletteImage,
+      image: heroCasinoImage,
       description: "Spin the wheel of fortune with both European and American roulette variants. Feel the anticipation as the ball finds its destiny.",
       features: [
         "European and American wheels available",
@@ -33,7 +34,7 @@ const Games = () => {
         "Comfortable seating with premium service"
       ],
       hours: "6 PM - 3 AM Daily",
-      minBet: "$5"
+      minBet: "1$"
     },
     {
       title: "Poker Lounge",
@@ -52,7 +53,7 @@ const Games = () => {
     {
       title: "Slots & Electronic Gaming",
       icon: Zap,
-      image: pokerImage,
+      image: heroCasinoImage,
       description: "Try your luck with our state-of-the-art slot machines featuring progressive jackpots, themed games, and the latest titles.",
       features: [
         "Over 100 modern slot machines",

@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, Music, Trophy, PartyPopper, Clock, MapPin, Ticket } from "lucide-react";
+import { Calendar, Music, Trophy, Clock, MapPin, Ticket } from "lucide-react";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
 
 const Events = () => {
@@ -46,12 +46,6 @@ const Events = () => {
       title: "Weekend Jackpot Rush",
       description: "Double loyalty points on all slot play every Saturday and Sunday",
       validUntil: "Ongoing"
-    },
-    {
-      icon: PartyPopper,
-      title: "Birthday Bonus",
-      description: "$100 free play credit on your birthday month with valid ID",
-      validUntil: "Year Round"
     },
     {
       icon: Ticket,
@@ -165,7 +159,7 @@ const Events = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {specialPromotions.map((promo, index) => {
               const Icon = promo.icon;
               return (

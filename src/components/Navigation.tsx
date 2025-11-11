@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import logoElRancho from "@/assets/logoelrancho.webp";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +21,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center space-x-2">
-            <div className="text-2xl md:text-3xl font-serif font-bold">
-              <span className="text-gold">Casino</span>{" "}
-              <span className="text-foreground">El Rancho</span>
-            </div>
+          <NavLink to="/" className="flex items-center">
+            <img
+              src={logoElRancho}
+              alt="Casino El Rancho"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <span className="sr-only">Casino El Rancho</span>
           </NavLink>
 
           {/* Desktop Navigation */}
