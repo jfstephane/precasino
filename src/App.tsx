@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Games from "./pages/Games";
 import Events from "./pages/Events";
 import Dining from "./pages/Dining";
+import Menu from "./pages/Menu";
 import Vip from "./pages/Vip";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/games" element={<Games />} />
           <Route path="/events" element={<Events />} />
           <Route path="/dining" element={<Dining />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/vip" element={<Vip />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

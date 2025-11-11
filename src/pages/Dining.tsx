@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Wine, Coffee, Utensils, ChefHat, Clock, Star, Music } from "lucide-react";
 import cocktailsImage from "@/assets/cocktails.jpg";
 import vipImage from "@/assets/vip-lounge.jpg";
@@ -8,33 +9,48 @@ import vipImage from "@/assets/vip-lounge.jpg";
 const Dining = () => {
   const menuHighlights = [
     {
-      category: "Signature Cocktails",
+      category: "Cocktails",
       icon: Wine,
       items: [
-        { name: "Royal Flush", description: "Premium vodka, champagne, elderflower, gold flakes", price: "$18" },
-        { name: "Jackpot Martini", description: "Gin, dry vermouth, caviar garnish", price: "$22" },
-        { name: "Golden Mojito", description: "Aged rum, fresh mint, gold sugar rim", price: "$16" },
-        { name: "Caribbean Sunset", description: "Tequila, passion fruit, hibiscus, lime", price: "$15" }
+        { name: "Rhum Punch", description: "House blend of island rum and tropical juices", price: "180" },
+        { name: "Whisky Sour", description: "Whisky, citrus, simple syrup", price: "160" },
+        { name: "Cocktail de Maison", description: "Signature mix crafted by our bartenders", price: "150" }
       ]
     },
     {
-      category: "Premium Spirits",
+      category: "Beer",
       icon: Wine,
       items: [
-        { name: "Single Malt Selection", description: "Macallan, Glenlivet, Lagavulin, Talisker", price: "$25-85" },
-        { name: "Rare Cognacs", description: "Hennessy XO, Rémy Martin Louis XIII", price: "$45-250" },
-        { name: "Vintage Wines", description: "Curated selection from France, Italy, Spain", price: "$60-400" },
-        { name: "Champagne Collection", description: "Dom Pérignon, Cristal, Krug, Bollinger", price: "$150-800" }
+        { name: "Prestige", description: "Haitian lager, crisp and refreshing", price: "60" },
+        { name: "Guiness", description: "Classic stout", price: "70" },
+        { name: "Heineken", description: "International pale lager", price: "85" }
       ]
     },
     {
-      category: "Gourmet Bites",
+      category: "Café",
+      icon: Coffee,
+      items: [
+        { name: "Café Cappuccino", description: "Espresso with steamed milk foam", price: "40" },
+        { name: "Café Glass Latte", description: "Smooth espresso and milk", price: "50" },
+        { name: "Mocha Frappe", description: "Iced mocha blended", price: "120" }
+      ]
+    },
+    {
+      category: "Juices",
+      icon: Wine,
+      items: [
+        { name: "Jus Mango au Lait", description: "Fresh mango blended with milk", price: "100" },
+        { name: "Jus Concombre", description: "Refreshing cucumber juice", price: "70" },
+        { name: "Jus Grenadia", description: "Passion fruit juice", price: "80" }
+      ]
+    },
+    {
+      category: "Appetizers",
       icon: Utensils,
       items: [
-        { name: "Wagyu Beef Sliders", description: "Premium beef, truffle aioli, brioche buns", price: "$28" },
-        { name: "Caviar Service", description: "Beluga caviar, blinis, crème fraîche", price: "$95" },
-        { name: "Artisan Cheese Board", description: "Selection of international cheeses, honeycomb", price: "$32" },
-        { name: "Fresh Oysters", description: "Half dozen on ice with mignonette", price: "$26" }
+        { name: "Acra", description: "Traditional fritters", price: "85" },
+        { name: "Banan Pese", description: "Crispy fried plantain", price: "75" },
+        { name: "Chicken Wings (4-6)", description: "Classic wings, perfect with drinks", price: "120" }
       ]
     }
   ];
@@ -163,6 +179,13 @@ const Dining = () => {
                 </div>
               );
             })}
+            <div className="text-center">
+              <Link to="/menu">
+                <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10">
+                  View Full Menu
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -231,9 +254,11 @@ const Dining = () => {
             <Button size="lg" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
               Make a Reservation
             </Button>
-            <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10">
-              View Full Menu
-            </Button>
+            <Link to="/menu">
+              <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10">
+                View Full Menu
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
