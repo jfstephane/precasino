@@ -252,16 +252,23 @@ const Menu = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {drinksSections.map((sec) => (
-              <div key={sec.title} className="bg-card rounded-lg border border-border p-6">
-                <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
-                <ul className="space-y-2">
-                  {sec.items.map((item) => (
-                    <li key={item.name} className="flex justify-between text-sm">
-                      <span>{item.name}</span>
-                      <span className="text-gold font-semibold">{item.price}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div key={sec.title} className="relative overflow-hidden bg-card rounded-lg border border-border p-6">
+                <img
+                  src={cocktailsImage}
+                  alt={`${sec.title} background`}
+                  className="absolute inset-0 w-full h-full object-cover opacity-10"
+                />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                  <ul className="space-y-2">
+                    {sec.items.map((item) => (
+                      <li key={item.name} className="flex justify-between text-sm">
+                        <span>{item.name}</span>
+                        <span className="text-gold font-semibold">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -278,16 +285,23 @@ const Menu = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {foodSections.map((sec) => (
-                  <div key={sec.title} className="bg-background rounded-lg border border-border p-6">
-                    <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
-                    <ul className="space-y-2">
-                      {sec.items.map((item) => (
-                        <li key={item.name} className="flex justify-between text-sm">
-                          <span>{item.name}</span>
-                          <span className="text-gold font-semibold">{item.price}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div key={sec.title} className="relative overflow-hidden bg-background rounded-lg border border-border p-6">
+                    <img
+                      src={vipImage}
+                      alt={`${sec.title} background`}
+                      className="absolute inset-0 w-full h-full object-cover opacity-10"
+                    />
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                      <ul className="space-y-2">
+                        {sec.items.map((item) => (
+                          <li key={item.name} className="flex justify-between text-sm">
+                            <span>{item.name}</span>
+                            <span className="text-gold font-semibold">{item.price}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 ))}
               </div>
