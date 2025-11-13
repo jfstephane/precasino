@@ -9,7 +9,7 @@ const Contact = () => {
   const faqs = [
     {
       question: "What are your operating hours?",
-      answer: "We're open Monday-Thursday 6 PM - 2 AM, and Friday-Sunday 6 PM - 4 AM. Gaming tables and slots have varying hours."
+      answer: "We're open daily from 2 PM to 3 AM. Gaming tables and slots may have varying hours."
     },
     {
       question: "Is there a dress code?",
@@ -70,10 +70,7 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">
-                +509 1234 5678<br />
-                VIP Line: +509 8765 4321
-              </p>
+              <p className="text-muted-foreground">28131053</p>
             </div>
 
             <div className="text-center">
@@ -81,10 +78,7 @@ const Contact = () => {
                 <Mail className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">
-                info@casinoelrancho.ht<br />
-                vip@casinoelrancho.ht
-              </p>
+              <p className="text-muted-foreground">info@casinoelrancho.ht</p>
             </div>
 
             <div className="text-center">
@@ -92,10 +86,7 @@ const Contact = () => {
                 <Clock className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Hours</h3>
-              <p className="text-muted-foreground">
-                Mon-Thu: 6 PM - 2 AM<br />
-                Fri-Sun: 6 PM - 4 AM
-              </p>
+              <p className="text-muted-foreground">2 PM - 3 AM Daily</p>
             </div>
           </div>
         </div>

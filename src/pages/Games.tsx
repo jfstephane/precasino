@@ -26,7 +26,7 @@ const Games = () => {
     {
       title: "Slot Machines",
       icon: Zap,
-      image: heroCasinoImage,
+      image: "/slots.jpeg",
       description:
         "Modern slot machines with progressive jackpots and classic 3‑reel IGT titles.",
       features: [
@@ -36,7 +36,7 @@ const Games = () => {
         "Video poker & electronic tables"
       ],
       hours: "Open 24/7",
-      minBet: "$0.25"
+      minBet: "$1"
     },
     {
       title: "Black Jack Triple Action",

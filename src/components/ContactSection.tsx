@@ -41,7 +41,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Phone</h4>
-                  <p className="text-muted-foreground">+509 1234 5678</p>
+                  <p className="text-muted-foreground">28131053</p>
                 </div>
               </div>
 
@@ -61,10 +61,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Hours</h4>
-                  <p className="text-muted-foreground">
-                    Mon-Thu: 6 PM - 2 AM<br />
-                    Fri-Sun: 6 PM - 4 AM
-                  </p>
+                  <p className="text-muted-foreground">2 PM - 3 AM Daily</p>
                 </div>
               </div>
             </div>

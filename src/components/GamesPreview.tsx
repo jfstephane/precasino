@@ -26,7 +26,7 @@ const games = [
     title: "Slots",
     description: "Modern gaming machines with progressive jackpots and themed games",
     icon: Zap,
-    image: heroCasinoImage,
+    image: "/slots.jpeg",
   },
 ];
 
