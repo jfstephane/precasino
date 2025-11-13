@@ -61,6 +61,15 @@ const Events = () => {
     }
   ];
 
+  // Images added by you in public/ to showcase promotions visually
+  const promoImages = [
+    "/nw1-1024x513.webp",
+    "/nw2.webp",
+    "/nw3.webp",
+    "/nw4.webp",
+    "/nw5-1024x513.webp",
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -160,26 +169,17 @@ const Events = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {specialPromotions.map((promo, index) => {
-              const Icon = promo.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border hover:border-gold transition-smooth"
-                >
-                  <div className="inline-flex p-3 rounded-lg bg-gold/10 mb-4">
-                    <Icon className="w-8 h-8 text-gold" />
-                  </div>
-                  <h3 className="text-xl font-serif font-bold mb-3">{promo.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {promo.description}
-                  </p>
-                  <p className="text-xs text-gold font-semibold">
-                    Valid: {promo.validUntil}
-                  </p>
+            {promoImages.map((src, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative rounded-lg overflow-hidden shadow-elegant border border-border hover:border-gold transition-smooth">
+                  <img
+                    src={src}
+                    alt="Promotion"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
+                  />
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>

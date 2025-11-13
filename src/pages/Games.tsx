@@ -9,60 +9,79 @@ import heroCasinoImage from "@/assets/hero-casino.jpg";
 const Games = () => {
   const gameDetails = [
     {
-      title: "Blackjack",
+      title: "Ultimate Texas Hold’em",
+      icon: Sparkles,
+      image: pokerImage,
+      description:
+        "Our tables are NO LIMIT poker with a minimum buy-in of 1000 HT (≈$120 US). Blinds at 25/50 HTD (≈3/6 US).",
+      features: [
+        "No limit Texas Hold’em tables",
+        "Minimum buy-in 1000 HT",
+        "Blinds 25/50 HTD (≈3/6 US)",
+        "Friendly dealers and tracked results"
+      ],
+      hours: "Open 24/7",
+      minBet: "Buy-in 1000 HT"
+    },
+    {
+      title: "Slot Machines",
+      icon: Zap,
+      image: heroCasinoImage,
+      description:
+        "Modern slot machines with progressive jackpots and classic 3‑reel IGT titles.",
+      features: [
+        "3 Reel IGT games",
+        "Pot‑of‑Gold, Lucky Numbers, Bonus Poker",
+        "Progressive jackpots",
+        "Video poker & electronic tables"
+      ],
+      hours: "Open 24/7",
+      minBet: "$0.25"
+    },
+    {
+      title: "Black Jack Triple Action",
       icon: Heart,
       image: rouletteImage,
-      description: "Experience the thrill of 21 at our premium blackjack tables. Our professional dealers ensure fair play and an exciting atmosphere.",
+      description:
+        "Blackjack with extra side bets — 3 games in 1 for more action and excitement.",
       features: [
-        "Multiple table limits from $10 to $1,000",
-        "Professional dealers available 7 days a week",
-        "Classic and modern variants including Spanish 21",
-        "Private VIP tables for high rollers"
+        "Triple Action side bets",
+        "Multiple table limits",
+        "Professional dealers",
+        "VIP tables available"
       ],
-      hours: "6 PM - 4 AM Daily",
+      hours: "6 PM – 4 AM Daily",
       minBet: "$10"
     },
     {
       title: "Roulette",
       icon: Dices,
       image: heroCasinoImage,
-      description: "Spin the wheel of fortune with both European and American roulette variants. Feel the anticipation as the ball finds its destiny.",
+      description:
+        "Traditional American Roulette with result display system; USD and Haitian currency tables available.",
       features: [
-        "European and American wheels available",
-        "Electronic betting displays at every seat",
-        "Progressive side bets with major jackpots",
-        "Comfortable seating with premium service"
+        "American roulette",
+        "Result display tracking",
+        "USD & Haitian currency tables",
+        "Comfortable seating"
       ],
-      hours: "6 PM - 3 AM Daily",
+      hours: "6 PM – 3 AM Daily",
       minBet: "1$"
     },
     {
-      title: "Poker Lounge",
-      icon: Sparkles,
+      title: "3 Cards Poker",
+      icon: Heart,
       image: pokerImage,
-      description: "Join the action in our exclusive poker room featuring Texas Hold'em, Omaha, and regular tournaments with substantial prize pools.",
+      description:
+        "Make a 3‑card poker hand and compete against the dealer — fast, fun, and simple to learn.",
       features: [
-        "10 premium poker tables with plush seating",
-        "Daily tournaments with buy-ins from $50-$500",
-        "Cash games running around the clock",
-        "Private tournament hosting available"
+        "Easy rules, quick rounds",
+        "Compete against the dealer",
+        "Great for beginners",
+        "Friendly staff assistance"
       ],
-      hours: "Open 24/7",
-      minBet: "$25 cash games"
-    },
-    {
-      title: "Slots & Electronic Gaming",
-      icon: Zap,
-      image: heroCasinoImage,
-      description: "Try your luck with our state-of-the-art slot machines featuring progressive jackpots, themed games, and the latest titles.",
-      features: [
-        "Over 100 modern slot machines",
-        "Progressive jackpots starting at $50,000",
-        "Video poker and electronic table games",
-        "Loyalty rewards on every play"
-      ],
-      hours: "Open 24/7",
-      minBet: "$0.25"
+      hours: "6 PM – 3 AM Daily",
+      minBet: "$10"
     }
   ];
 
