@@ -1,5 +1,6 @@
 import rouletteImage from "@/assets/roulette.jpg";
 import pokerImage from "@/assets/poker.jpg";
+import heroCasinoImage from "@/assets/hero-casino.jpg";
 import { Dices, Heart, Sparkles, Zap } from "lucide-react";
 
 const games = [
@@ -7,7 +8,7 @@ const games = [
     title: "Blackjack",
     description: "Master the art of 21 at our premium tables with professional dealers",
     icon: Heart,
-    image: rouletteImage,
+    image: heroCasinoImage,
   },
   {
     title: "Roulette",
@@ -25,7 +26,7 @@ const games = [
     title: "Slots",
     description: "Modern gaming machines with progressive jackpots and themed games",
     icon: Zap,
-    image: pokerImage,
+    image: heroCasinoImage,
   },
 ];
 
