@@ -8,11 +8,14 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto overflow-hidden rounded-lg shadow-elegant">
           <video
             src={officialVideo}
+            autoPlay
+            muted
+            playsInline
+            loop
             controls
             className="w-full h-auto"
           />
         </div>
-
         {/* Headline under video */}
         <div className="text-center mt-8">
           <h1 className="text-5xl md:text-7xl font-serif font-bold">
