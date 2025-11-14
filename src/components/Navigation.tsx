@@ -12,7 +12,6 @@ const Navigation = () => {
     { to: "/games", label: "Games" },
     { to: "/events", label: "Promotions & Events" },
     { to: "/dining", label: "Dining & Lounge" },
-    { to: "/vip", label: "VIP & Membership" },
     { to: "/contact", label: "Contact & Location" },
   ];
 
