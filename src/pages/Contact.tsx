@@ -171,13 +171,25 @@ const Contact = () => {
                 Find <span className="text-gold">Us</span>
               </h2>
               
-              {/* Map Placeholder */}
-              <div className="w-full h-80 bg-secondary rounded-lg border border-border flex items-center justify-center mb-6">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gold mx-auto mb-2" />
-                  <p className="text-muted-foreground">Interactive Map</p>
-                  <p className="text-sm text-muted-foreground">Pétion-Ville, Port-au-Prince</p>
-                </div>
+              {/* Map Placeholder (linked to Google Maps) */}
+              <div className="rounded-lg overflow-hidden border border-border mb-6">
+                <iframe
+                  src="https://www.google.com/maps?q=CASINO+ELRANCHO&output=embed"
+                  title="Casino El Rancho Map"
+                  className="w-full h-80"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="text-center">
+                <a
+                  href="https://google.com/maps/place/CASINO+ELRANCHO/data=!4m2!3m1!1s0x0:0x8a9c6a6cbc784347?sa=X&ved=1t:2428&ictx=111"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:underline"
+                >
+                  Open in Google Maps
+                </a>
               </div>
 
               {/* Directions & Parking */}
