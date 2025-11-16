@@ -1,4 +1,6 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { NavLink } from "./NavLink";
+import logoElRancho from "@/assets/logoelrancho.webp";
 
 const Footer = () => {
   return (
@@ -7,10 +9,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="text-2xl font-serif font-bold mb-4">
-              <span className="text-gold">Casino</span>{" "}
-              <span className="text-foreground">El Rancho</span>
-            </div>
+            <NavLink to="/" className="inline-block mb-4">
+              <img
+                src={logoElRancho}
+                alt="Casino El Rancho"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            </NavLink>
             <p className="text-muted-foreground mb-4">
               Pétion-Ville's premier destination for luxury gaming and entertainment.
             </p>
@@ -39,11 +44,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {["Games", "Events", "Dining", "VIP Club", "Contact"].map((link) => (
+              {["Games", "Events", "Dining", "Contact"].map((link) => (
                 <li key={link}>
                   <a 
                     href="#" 
@@ -56,20 +60,21 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
-              {["Terms & Conditions", "Privacy Policy", "Responsible Gaming", "Age Verification"].map((link) => (
-                <li key={link}>
-                  <a 
-                    href="#" 
-                    className="text-muted-foreground hover:text-gold transition-fast"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <NavLink to="/legal/terms" className="text-muted-foreground hover:text-gold transition-fast">Terms & Conditions</NavLink>
+              </li>
+              <li>
+                <NavLink to="/legal/privacy" className="text-muted-foreground hover:text-gold transition-fast">Privacy Policy</NavLink>
+              </li>
+              <li>
+                <NavLink to="/legal/responsible-gaming" className="text-muted-foreground hover:text-gold transition-fast">Responsible Gaming</NavLink>
+              </li>
+              <li>
+                <NavLink to="/legal/age-verification" className="text-muted-foreground hover:text-gold transition-fast">Age Verification</NavLink>
+              </li>
             </ul>
           </div>
         </div>

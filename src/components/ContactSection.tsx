@@ -66,10 +66,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full h-64 bg-secondary rounded-lg border border-border flex items-center justify-center">
-              <p className="text-muted-foreground">Map Integration</p>
-            </div>
+            
           </div>
 
           {/* Contact Form */}
