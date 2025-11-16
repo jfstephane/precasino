@@ -105,14 +105,31 @@ const Contact = () => {
                 Have a question or want to make a reservation? Fill out the form below and our team will get back to you within 24 hours.
               </p>
               
-              <form className="space-y-6">
+              <form
+                className="space-y-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget as HTMLFormElement;
+                  const data = new FormData(form);
+                  const name = String(data.get("name") || "").trim();
+                  const email = String(data.get("email") || "").trim();
+                  const phone = String(data.get("phone") || "").trim();
+                  const subject = String(data.get("subject") || "General Inquiry").trim();
+                  const message = String(data.get("message") || "").trim();
+                  const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`;
+                  const mailto = `mailto:info@casinoelrancho.ht?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  window.location.href = mailto;
+                }}
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input 
+                    name="name"
                     placeholder="Your Name" 
                     className="bg-background border-border focus:border-gold"
                   />
                   <Input 
                     type="email" 
+                    name="email"
                     placeholder="Your Email" 
                     className="bg-background border-border focus:border-gold"
                   />
@@ -120,16 +137,19 @@ const Contact = () => {
                 
                 <Input 
                   type="tel"
+                  name="phone"
                   placeholder="Phone Number (Optional)" 
                   className="bg-background border-border focus:border-gold"
                 />
                 
                 <Input 
+                  name="subject"
                   placeholder="Subject" 
                   className="bg-background border-border focus:border-gold"
                 />
                 
                 <Textarea 
+                  name="message"
                   placeholder="Your Message" 
                   rows={6}
                   className="bg-background border-border focus:border-gold resize-none"

@@ -28,8 +28,7 @@ const benefits = [
 const VipSection = () => {
   return (
     <section className="py-20 bg-background relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 hidden">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--gold)) 1px, transparent 0)`,
           backgroundSize: '40px 40px'
@@ -37,7 +36,7 @@ const VipSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center hidden">
           {/* Content */}
           <div className="order-2 lg:order-1">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">

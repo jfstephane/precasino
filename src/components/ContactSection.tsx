@@ -73,25 +73,43 @@ const ContactSection = () => {
           <div>
             <h3 className="text-2xl font-serif font-bold mb-8">Send a Message</h3>
             
-            <form className="space-y-6">
+            <form
+              className="space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget as HTMLFormElement;
+                const data = new FormData(form);
+                const name = String(data.get("name") || "").trim();
+                const email = String(data.get("email") || "").trim();
+                const subject = String(data.get("subject") || "General Inquiry").trim();
+                const message = String(data.get("message") || "").trim();
+                const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+                const mailto = `mailto:info@casinoelrancho.ht?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailto;
+              }}
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input 
+                  name="name"
                   placeholder="Your Name" 
                   className="bg-background border-border focus:border-gold"
                 />
                 <Input 
                   type="email" 
+                  name="email"
                   placeholder="Your Email" 
                   className="bg-background border-border focus:border-gold"
                 />
               </div>
               
               <Input 
+                name="subject"
                 placeholder="Subject" 
                 className="bg-background border-border focus:border-gold"
               />
               
               <Textarea 
+                name="message"
                 placeholder="Your Message" 
                 rows={6}
                 className="bg-background border-border focus:border-gold resize-none"
