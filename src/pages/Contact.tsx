@@ -43,8 +43,8 @@ const Contact = () => {
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
             Visit <span className="text-gold">Us</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Located in the heart of Pétion-Ville, Haiti's premier entertainment destination
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in whitespace-nowrap">
+            Located in the heart of Pétion-Ville
           </p>
         </div>
       </section>
@@ -70,7 +70,7 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">28131053</p>
+              <p className="text-muted-foreground">+509 28131053</p>
             </div>
 
             <div className="text-center">

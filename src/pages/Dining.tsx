@@ -233,7 +233,7 @@ const Dining = () => {
                 alt="Lounge Interior"
                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-smooth"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              
             </div>
           </div>
         </div>

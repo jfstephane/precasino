@@ -41,7 +41,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Phone</h4>
-                  <p className="text-muted-foreground">28131053</p>
+                  <p className="text-muted-foreground">+509 28131053</p>
                 </div>
               </div>
 

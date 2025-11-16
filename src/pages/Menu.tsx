@@ -184,18 +184,6 @@ const foodSections: MenuSection[] = [
     ],
   },
   {
-    title: "Sandwich",
-    items: [
-      { name: "Pain Grillé (4)", price: 35 },
-      { name: "Pain Chauff/Fraiche", price: 35 },
-      { name: "Pain Grillé Mamba", price: 40 },
-      { name: "Cubano Sandwich Poulet", price: 120 },
-      { name: "Cubano Sandwich Jambon et Fromage", price: 145 },
-      { name: "Pain Tranche Sandwich Poulet", price: 150 },
-      { name: "Pain Tranche Sandwich Jambon et Fromage", price: 140 },
-    ],
-  },
-  {
     title: "Burritos Wrap",
     items: [
       { name: "Jambon Fromage", price: 120 },
@@ -225,9 +213,24 @@ const foodSections: MenuSection[] = [
       { name: "Chocolate Sliced Cake", price: 70 },
     ],
   },
+  {
+    title: "Sandwich",
+    items: [
+      { name: "Pain Grillé (4)", price: 35 },
+      { name: "Pain Chauff/Fraiche", price: 35 },
+      { name: "Pain Grillé Mamba", price: 40 },
+      { name: "Cubano Sandwich Poulet", price: 120 },
+      { name: "Cubano Sandwich Jambon et Fromage", price: 145 },
+      { name: "Pain Tranche Sandwich Poulet", price: 150 },
+      { name: "Pain Tranche Sandwich Jambon et Fromage", price: 140 },
+    ],
+  },
 ];
 
 const Menu = () => {
+  const mid = Math.ceil(foodSections.length / 2);
+  const leftSections = foodSections.slice(0, mid);
+  const rightSections = foodSections.slice(mid);
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -278,41 +281,57 @@ const Menu = () => {
       {/* Food */}
       <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">Food</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">
-                Food
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {foodSections.map((sec) => (
-                  <div key={sec.title} className="relative overflow-hidden bg-background rounded-lg border border-border p-6">
-                    <img
-                      src={vipImage}
-                      alt={`${sec.title} background`}
-                      className="absolute inset-0 w-full h-full object-cover opacity-10"
-                    />
-                    <div className="relative z-10">
-                      <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
-                      <ul className="space-y-2">
-                        {sec.items.map((item) => (
+            <div className="space-y-8">
+              {leftSections.map((sec) => (
+                <div key={sec.title} className="relative overflow-hidden bg-background rounded-lg border border-border p-6">
+                  <img
+                    src={vipImage}
+                    alt={`${sec.title} background`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-10"
+                  />
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                    <ul className="space-y-2">
+                      {sec.items
+                        .slice()
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((item) => (
                           <li key={item.name} className="flex justify-between text-sm">
                             <span>{item.name}</span>
                             <span className="text-gold font-semibold">{item.price}</span>
                           </li>
                         ))}
-                      </ul>
-                    </div>
+                    </ul>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-            <div className="relative rounded-lg overflow-hidden shadow-elegant">
-              <img
-                src={vipImage}
-                alt="Dining ambiance"
-                className="w-full h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            <div className="space-y-8">
+              {rightSections.map((sec) => (
+                <div key={sec.title} className="relative overflow-hidden bg-background rounded-lg border border-border p-6">
+                  <img
+                    src={vipImage}
+                    alt={`${sec.title} background`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-10"
+                  />
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                    <ul className="space-y-2">
+                      {sec.items
+                        .slice()
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((item) => (
+                          <li key={item.name} className="flex justify-between text-sm">
+                            <span>{item.name}</span>
+                            <span className="text-gold font-semibold">{item.price}</span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
