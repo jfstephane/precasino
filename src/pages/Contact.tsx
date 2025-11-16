@@ -182,19 +182,7 @@ const Contact = () => {
 
               {/* Directions & Parking */}
               <div className="space-y-6">
-                <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
-                  <div className="flex items-start space-x-4">
-                    <NavigationIcon className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Directions</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        Located in the heart of Pétion-Ville, easily accessible from Route de Delmas. 
-                        Look for our illuminated gold Casino El Rancho sign. GPS coordinates available upon request.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+                
                 <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
                   <div className="flex items-start space-x-4">
                     <ParkingCircle className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
