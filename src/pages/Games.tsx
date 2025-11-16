@@ -221,7 +221,7 @@ const Games = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-dark relative overflow-hidden">
+      <section className="py-20 bg-gradient-dark relative overflow-hidden hidden">
         
         
         <div className="container mx-auto px-4 relative z-10 text-center">
