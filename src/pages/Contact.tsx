@@ -246,7 +246,7 @@ const Contact = () => {
 
       {/* Final CTA */}
       <section className="py-20 bg-gradient-dark relative overflow-hidden">
-        <div className="absolute inset-0 gradient-gold opacity-20" />
+        
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
@@ -259,7 +259,7 @@ const Contact = () => {
             <Button size="lg" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
               Make a Reservation
             </Button>
-            <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10">
+            <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10 hidden">
               View VIP Benefits
             </Button>
           </div>

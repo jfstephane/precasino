@@ -191,7 +191,7 @@ const Dining = () => {
       </section>
 
       {/* Lounge Ambiance */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-gradient-dark hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -240,10 +240,10 @@ const Dining = () => {
       </section>
 
       {/* Reservations CTA */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 gradient-gold opacity-20" />
+      <section className="py-20 bg-background relative overflow-hidden hidden">
         
-        <div className="container mx-auto px-4 relative z-10 text-center">
+        
+        <div className="container mx-auto px-4 relative z-10 text-center hidden">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
             Reserve Your <span className="text-gold">Table</span>
           </h2>
