@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { NavLink } from "./NavLink";
 import logoElRancho from "@/assets/logoelrancho.webp";
 
@@ -21,26 +21,20 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/p/El-Rancho-Casino-100066340551816/" 
                 className="p-2 rounded-lg bg-secondary hover:bg-gold/10 text-muted-foreground hover:text-gold transition-fast"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/casinoelrancho/" 
                 className="p-2 rounded-lg bg-secondary hover:bg-gold/10 text-muted-foreground hover:text-gold transition-fast"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-lg bg-secondary hover:bg-gold/10 text-muted-foreground hover:text-gold transition-fast"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
+              
             </div>
           </div>
 
