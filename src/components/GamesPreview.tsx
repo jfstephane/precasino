@@ -1,6 +1,7 @@
 import rouletteImage from "@/assets/roulette.jpg";
 import pokerImage from "@/assets/poker.jpg";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
+import slotsImage from "@/../public/slots.jpeg";
 import { Dices, Heart, Sparkles, Zap } from "lucide-react";
 
 const games = [
@@ -26,7 +27,7 @@ const games = [
     title: "Slots",
     description: "Modern gaming machines with progressive jackpots and themed games",
     icon: Zap,
-    image: "/slots.jpeg",
+    image: slotsImage,
   },
 ];
 

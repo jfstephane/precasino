@@ -5,6 +5,7 @@ import { Heart, Dices, Sparkles, Zap, Clock, DollarSign, Users } from "lucide-re
 import rouletteImage from "@/assets/roulette.jpg";
 import pokerImage from "@/assets/poker.jpg";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
+import slotsImage from "@/../public/slots.jpeg";
 
 const Games = () => {
   const gameDetails = [
@@ -26,7 +27,7 @@ const Games = () => {
     {
       title: "Slot Machines",
       icon: Zap,
-      image: "/slots.jpeg",
+      image: slotsImage,
       description:
         "Modern slot machines with progressive jackpots and classic 3‑reel IGT titles.",
       features: [
