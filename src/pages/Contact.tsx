@@ -23,14 +23,7 @@ const Contact = () => {
       question: "What is the minimum age requirement?",
       answer: "You must be 18 years or older to enter the casino and participate in gaming activities. Valid ID is required."
     },
-    {
-      question: "Do you offer valet parking?",
-      answer: "Yes, complimentary valet parking is available for all guests. Platinum and Diamond members receive priority valet service."
-    },
-    {
-      question: "Can I host a private event?",
-      answer: "Absolutely! We have private spaces available for corporate events, birthdays, and special celebrations. Contact our events team for details."
-    }
+    
   ];
 
   return (
