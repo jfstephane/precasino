@@ -105,7 +105,7 @@ const Games = () => {
             Premium <span className="text-gold">Gaming</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Choose from our diverse selection of classic and modern casino games
+            Choose from our selection of classic and modern casino games
           </p>
         </div>
       </section>
@@ -229,7 +229,7 @@ const Games = () => {
             Ready to <span className="text-gold">Play?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join us for an unforgettable gaming experience at Haiti's premier casino destination
+            Join us for an unforgettable gaming experience
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">

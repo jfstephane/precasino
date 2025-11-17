@@ -90,7 +90,7 @@ const Events = () => {
             Events & <span className="text-gold">Promotions</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Experience world-class entertainment and exclusive offers at Haiti's premier casino
+            Experience world-class entertainment and exclusive offers
           </p>
         </div>
       </section>
