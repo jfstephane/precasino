@@ -42,7 +42,7 @@ const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-smooth" />
               </NavLink>
             ))}
-            <Button variant="default" size="sm" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
+            <Button variant="default" size="sm" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold hidden">
               Book Now
             </Button>
           </div>
@@ -71,7 +71,7 @@ const Navigation = () => {
                 {item.label}
               </NavLink>
             ))}
-            <Button variant="default" size="sm" className="w-full bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
+            <Button variant="default" size="sm" className="w-full bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold hidden">
               Book Now
             </Button>
           </div>
