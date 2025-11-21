@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import cocktailsImage from "@/assets/cocktails.jpg";
 import vipImage from "@/assets/vip-lounge.jpg";
+import { useI18n } from "@/i18n";
 
 type MenuItem = { name: string; price: string | number };
 type MenuSection = { title: string; items: MenuItem[] };
@@ -228,6 +229,7 @@ const foodSections: MenuSection[] = [
 ];
 
 const Menu = () => {
+  const { t } = useI18n();
   const mid = Math.ceil(foodSections.length / 2);
   const leftSections = foodSections.slice(0, mid);
   const rightSections = foodSections.slice(mid);
@@ -242,19 +244,17 @@ const Menu = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold">Full Menu</h1>
-          <p className="text-muted-foreground mt-3">Drinks and Food selections</p>
+          <h1 className="text-5xl md:text-6xl font-serif font-bold">{t("menu.hero.title")}</h1>
+          <p className="text-muted-foreground mt-3">{t("menu.hero.tagline")}</p>
         </div>
       </section>
 
       {/* Drinks */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">
-            Drinks
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">{t("menu.drinks.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {drinksSections.map((sec) => (
+            {drinksSections.map((sec, i) => (
               <div key={sec.title} className="relative overflow-hidden bg-card rounded-lg border border-border p-6">
                 <img
                   src={cocktailsImage}
@@ -262,7 +262,7 @@ const Menu = () => {
                   className="absolute inset-0 w-full h-full object-cover opacity-10"
                 />
                 <div className="relative z-10">
-                  <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t(`menu.drinks.section.${i + 1}.title`)}</h3>
                   <ul className="space-y-2">
                     {sec.items.map((item) => (
                       <li key={item.name} className="flex justify-between text-sm">
@@ -281,7 +281,7 @@ const Menu = () => {
       {/* Food */}
       <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">Food</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-10">{t("menu.food.title")}</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-8">
               {leftSections.map((sec) => (
@@ -292,7 +292,7 @@ const Menu = () => {
                     className="absolute inset-0 w-full h-full object-cover opacity-10"
                   />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                    <h3 className="text-xl font-semibold mb-4">{t(`menu.food.section.${foodSections.indexOf(sec) + 1}.title`)}</h3>
                     <ul className="space-y-2">
                       {sec.items
                         .slice()
@@ -317,7 +317,7 @@ const Menu = () => {
                     className="absolute inset-0 w-full h-full object-cover opacity-10"
                   />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                    <h3 className="text-xl font-semibold mb-4">{t(`menu.food.section.${foodSections.indexOf(sec) + 1}.title`)}</h3>
                     <ul className="space-y-2">
                       {sec.items
                         .slice()

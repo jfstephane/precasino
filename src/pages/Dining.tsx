@@ -5,52 +5,54 @@ import { Link } from "react-router-dom";
 import { Wine, Coffee, Utensils, ChefHat, Clock, Star, Music } from "lucide-react";
 import cocktailsImage from "@/assets/cocktails.jpg";
 import vipImage from "@/assets/vip-lounge.jpg";
+import { useI18n } from "@/i18n";
 
 const Dining = () => {
+  const { t } = useI18n();
   const menuHighlights = [
     {
-      category: "Cocktails",
+      category: t("dining.menu.section1.title"),
       icon: Wine,
       items: [
-        { name: "Rhum Punch", description: "House blend of island rum and tropical juices", price: "180" },
-        { name: "Whisky Sour", description: "Whisky, citrus, simple syrup", price: "160" },
-        { name: "Cocktail de Maison", description: "Signature mix crafted by our bartenders", price: "150" }
+        { name: "Rhum Punch", description: t("dining.menu.section1.item1.desc"), price: "180" },
+        { name: "Whisky Sour", description: t("dining.menu.section1.item2.desc"), price: "160" },
+        { name: "Cocktail de Maison", description: t("dining.menu.section1.item3.desc"), price: "150" }
       ]
     },
     {
-      category: "Beer",
+      category: t("dining.menu.section2.title"),
       icon: Wine,
       items: [
-        { name: "Prestige", description: "Haitian lager, crisp and refreshing", price: "60" },
-        { name: "Guiness", description: "Classic stout", price: "70" },
-        { name: "Heineken", description: "International pale lager", price: "85" }
+        { name: "Prestige", description: t("dining.menu.section2.item1.desc"), price: "60" },
+        { name: "Guiness", description: t("dining.menu.section2.item2.desc"), price: "70" },
+        { name: "Heineken", description: t("dining.menu.section2.item3.desc"), price: "85" }
       ]
     },
     {
-      category: "Café",
+      category: t("dining.menu.section3.title"),
       icon: Coffee,
       items: [
-        { name: "Café Cappuccino", description: "Espresso with steamed milk foam", price: "40" },
-        { name: "Café Glass Latte", description: "Smooth espresso and milk", price: "50" },
-        { name: "Mocha Frappe", description: "Iced mocha blended", price: "120" }
+        { name: "Café Cappuccino", description: t("dining.menu.section3.item1.desc"), price: "40" },
+        { name: "Café Glass Latte", description: t("dining.menu.section3.item2.desc"), price: "50" },
+        { name: "Mocha Frappe", description: t("dining.menu.section3.item3.desc"), price: "120" }
       ]
     },
     {
-      category: "Juices",
+      category: t("dining.menu.section4.title"),
       icon: Wine,
       items: [
-        { name: "Jus Mango au Lait", description: "Fresh mango blended with milk", price: "100" },
-        { name: "Jus Concombre", description: "Refreshing cucumber juice", price: "70" },
-        { name: "Jus Grenadia", description: "Passion fruit juice", price: "80" }
+        { name: "Jus Mango au Lait", description: t("dining.menu.section4.item1.desc"), price: "100" },
+        { name: "Jus Concombre", description: t("dining.menu.section4.item2.desc"), price: "70" },
+        { name: "Jus Grenadia", description: t("dining.menu.section4.item3.desc"), price: "80" }
       ]
     },
     {
-      category: "Appetizers",
+      category: t("dining.menu.section5.title"),
       icon: Utensils,
       items: [
-        { name: "Acra", description: "Traditional fritters", price: "85" },
-        { name: "Banan Pese", description: "Crispy fried plantain", price: "75" },
-        { name: "Chicken Wings (4-6)", description: "Classic wings, perfect with drinks", price: "120" }
+        { name: "Acra", description: t("dining.menu.section5.item1.desc"), price: "85" },
+        { name: "Banan Pese", description: t("dining.menu.section5.item2.desc"), price: "75" },
+        { name: "Chicken Wings (4-6)", description: t("dining.menu.section5.item3.desc"), price: "120" }
       ]
     }
   ];
@@ -95,10 +97,10 @@ const Dining = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
-            Dining & <span className="text-gold">Lounge</span>
+            {t("dining.hero.title.left")} & <span className="text-gold">{t("dining.hero.title.right")}</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Indulge in artisan cocktails, premium spirits, and gourmet cuisine
+            {t("dining.hero.tagline")}
           </p>
         </div>
       </section>
@@ -108,13 +110,10 @@ const Dining = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              Elevate Your <span className="text-gold">Experience</span>
+              {t("dining.intro.title.left")} <span className="text-gold">{t("dining.intro.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-              Our premium bar and lounge offers more than just exceptional drinks. It's an experience 
-              crafted by expert mixologists using the finest ingredients, presented in an atmosphere of 
-              sophisticated luxury. Whether you're celebrating a win or enjoying an evening out, our 
-              culinary team ensures every moment is memorable.
+              {t("dining.intro.paragraph")}
             </p>
           </div>
 
@@ -129,8 +128,8 @@ const Dining = () => {
                   <div className="inline-flex p-4 rounded-lg bg-gold/10 mb-4">
                     <Icon className="w-8 h-8 text-gold" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-3">{t(`dining.features.${index + 1}.title`)}</h3>
+                  <p className="text-sm text-muted-foreground">{t(`dining.features.${index + 1}.desc`)}</p>
                 </div>
               );
             })}
@@ -143,10 +142,10 @@ const Dining = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Menu <span className="text-gold">Highlights</span>
+              {t("dining.menu.title.left")} <span className="text-gold">{t("dining.menu.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A curated selection of our finest offerings
+              {t("dining.menu.tagline")}
             </p>
           </div>
 
@@ -182,7 +181,7 @@ const Dining = () => {
             <div className="text-center">
               <Link to="/menu">
                 <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10">
-                  View Full Menu
+                  {t("dining.menu.cta")}
                 </Button>
               </Link>
             </div>

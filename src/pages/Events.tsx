@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Music, Trophy, Clock, MapPin, Ticket } from "lucide-react";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
+import { useI18n } from "@/i18n";
 
 const Events = () => {
   const upcomingEvents = [
@@ -70,6 +71,7 @@ const Events = () => {
     "/nw5-1024x513.webp",
   ];
 
+  const { t } = useI18n();
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -87,10 +89,10 @@ const Events = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
-            Events & <span className="text-gold">Promotions</span>
+            {t("events.hero.title").split(" & ")[0]} & <span className="text-gold">{t("events.hero.title").split(" & ")[1]}</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Experience world-class entertainment and exclusive offers
+            {t("events.hero.tagline")}
           </p>
         </div>
       </section>
@@ -100,9 +102,9 @@ const Events = () => {
         <div className="container mx-auto px-4">
           <div className="bg-card rounded-lg border border-border p-8 text-center">
             <Clock className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
-            <h2 className="text-2xl font-serif font-bold mb-2">No Events Currently</h2>
+            <h2 className="text-2xl font-serif font-bold mb-2">{t("events.none.title")}</h2>
             <p className="text-muted-foreground">
-              There are no events for now. Please check back soon for updates.
+              {t("events.none.desc")}
             </p>
           </div>
         </div>
@@ -117,10 +119,10 @@ const Events = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Special <span className="text-gold">Promotions</span>
+              {t("events.promos.title.left")} <span className="text-gold">{t("events.promos.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Take advantage of our exclusive offers and maximize your gaming experience
+              {t("events.promos.tagline")}
             </p>
           </div>
 
@@ -147,19 +149,19 @@ const Events = () => {
             <div className="bg-card/50 backdrop-blur-sm rounded-lg border border-gold/30 p-12 text-center">
               <Calendar className="w-16 h-16 text-gold mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                Never Miss an Event
+                {t("events.news.title")}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Subscribe to our newsletter and get exclusive invitations to VIP events, early bird promotions, and special announcements.
+                {t("events.news.desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("events.news.placeholder")}
                   className="flex-1 px-4 py-3 rounded-lg bg-background border border-border focus:border-gold focus:outline-none"
                 />
                 <Button className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
-                  Subscribe
+                  {t("events.news.cta")}
                 </Button>
               </div>
             </div>

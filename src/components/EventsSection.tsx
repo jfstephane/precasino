@@ -23,6 +23,7 @@ const events = [
 ];
 
 const EventsSection = () => {
+  const { t } = useI18n();
   return (
     <section className="py-20 bg-card relative overflow-hidden">
       <div className="absolute inset-0 gradient-gold opacity-30" />
@@ -30,10 +31,10 @@ const EventsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-            Nightlife & <span className="text-gold">Events</span>
+            {t("home.events.title.left")} & <span className="text-gold">{t("home.events.title.right")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience unforgettable nights with world-class entertainment
+            {t("home.events.tagline")}
           </p>
         </div>
 
@@ -50,10 +51,10 @@ const EventsSection = () => {
                   <Icon className="w-8 h-8 text-gold" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">
-                  {event.title}
+                  {t(`home.events.item${index + 1}.title`)}
                 </h3>
-                <p className="text-muted-foreground mb-4">{event.description}</p>
-                <p className="text-gold font-semibold">{event.time}</p>
+                <p className="text-muted-foreground mb-4">{t(`home.events.item${index + 1}.desc`)}</p>
+                <p className="text-gold font-semibold">{t(`home.events.item${index + 1}.time`)}</p>
               </div>
             );
           })}
@@ -64,7 +65,7 @@ const EventsSection = () => {
             size="lg" 
             className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold"
           >
-            View Full Calendar
+            {t("home.events.cta")}
           </Button>
         </div>
       </div>
@@ -73,3 +74,4 @@ const EventsSection = () => {
 };
 
 export default EventsSection;
+import { useI18n } from "@/i18n";

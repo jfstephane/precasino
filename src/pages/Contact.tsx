@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Navigation as NavigationIcon, ParkingCircle, Info } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 const Contact = () => {
   const faqs = [
@@ -26,6 +27,7 @@ const Contact = () => {
     
   ];
 
+  const { t } = useI18n();
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -34,10 +36,10 @@ const Contact = () => {
       <section className="pt-32 pb-20 bg-gradient-dark">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
-            Visit <span className="text-gold">Us</span>
+            {t("contact.hero.title").split(" ")[0]} <span className="text-gold">{t("contact.hero.title").split(" ").slice(1).join(" ")}</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in whitespace-nowrap">
-            Located in the heart of Pétion-Ville
+            {t("contact.hero.tagline")}
           </p>
         </div>
       </section>
@@ -50,7 +52,7 @@ const Contact = () => {
               <div className="inline-flex p-4 rounded-lg bg-gold/10 mb-4">
                 <MapPin className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Location</h3>
+              <h3 className="text-xl font-semibold mb-2">{t("contact.info.location")}</h3>
               <p className="text-muted-foreground">
                 Pétion-Ville<br />
                 Port-au-Prince<br />
@@ -62,7 +64,7 @@ const Contact = () => {
               <div className="inline-flex p-4 rounded-lg bg-gold/10 mb-4">
                 <Phone className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Phone</h3>
+              <h3 className="text-xl font-semibold mb-2">{t("contact.info.phone")}</h3>
               <p className="text-muted-foreground">+509 28131053</p>
             </div>
 
@@ -70,7 +72,7 @@ const Contact = () => {
               <div className="inline-flex p-4 rounded-lg bg-gold/10 mb-4">
                 <Mail className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
+              <h3 className="text-xl font-semibold mb-2">{t("contact.info.email")}</h3>
               <p className="text-muted-foreground">info@casinoelrancho.ht</p>
             </div>
 
@@ -78,8 +80,8 @@ const Contact = () => {
               <div className="inline-flex p-4 rounded-lg bg-gold/10 mb-4">
                 <Clock className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Hours</h3>
-              <p className="text-muted-foreground">2 PM - 3 AM Daily</p>
+              <h3 className="text-xl font-semibold mb-2">{t("contact.info.hours")}</h3>
+              <p className="text-muted-foreground">{t("contact.info.hoursValue")}</p>
             </div>
           </div>
         </div>
@@ -92,10 +94,10 @@ const Contact = () => {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                Send Us a <span className="text-gold">Message</span>
+                {t("contact.page.form.title").split(" ")[0]} {t("contact.page.form.title").includes(" ") ? <span className="text-gold">{t("contact.page.form.title").split(" ").slice(1).join(" ")}</span> : null}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Have a question or want to make a reservation? Fill out the form below and our team will get back to you within 24 hours.
+                {t("contact.page.form.desc")}
               </p>
               
               <form
@@ -117,13 +119,13 @@ const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input 
                     name="name"
-                    placeholder="Your Name" 
+                    placeholder={t("contact.page.form.name")} 
                     className="bg-background border-border focus:border-gold"
                   />
                   <Input 
                     type="email" 
                     name="email"
-                    placeholder="Your Email" 
+                    placeholder={t("contact.page.form.email")} 
                     className="bg-background border-border focus:border-gold"
                   />
                 </div>
@@ -131,19 +133,19 @@ const Contact = () => {
                 <Input 
                   type="tel"
                   name="phone"
-                  placeholder="Phone Number (Optional)" 
+                  placeholder={t("contact.page.form.phone")} 
                   className="bg-background border-border focus:border-gold"
                 />
                 
                 <Input 
                   name="subject"
-                  placeholder="Subject" 
+                  placeholder={t("contact.page.form.subject")} 
                   className="bg-background border-border focus:border-gold"
                 />
                 
                 <Textarea 
                   name="message"
-                  placeholder="Your Message" 
+                  placeholder={t("contact.page.form.message")} 
                   rows={6}
                   className="bg-background border-border focus:border-gold resize-none"
                 />
@@ -153,7 +155,7 @@ const Contact = () => {
                   size="lg" 
                   className="w-full bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold"
                 >
-                  Send Message
+                  {t("contact.page.form.submit")}
                 </Button>
               </form>
             </div>
@@ -161,7 +163,7 @@ const Contact = () => {
             {/* Map & Directions */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                Find <span className="text-gold">Us</span>
+                {t("contact.page.find.title").split(" ")[0]} <span className="text-gold">{t("contact.page.find.title").split(" ").slice(1).join(" ")}</span>
               </h2>
               
               {/* Map Placeholder (linked to Google Maps) */}
@@ -181,7 +183,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="text-gold hover:underline"
                 >
-                  Open in Google Maps
+                  {t("contact.page.map.cta")}
                 </a>
               </div>
 
@@ -192,10 +194,9 @@ const Contact = () => {
                   <div className="flex items-start space-x-4">
                     <ParkingCircle className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Parking</h3>
+                      <h3 className="text-xl font-semibold mb-2">{t("contact.page.parking.title")}</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Complimentary valet parking for all guests. Secure parking garage with 24/7 security. 
-                        VIP members receive priority valet service.
+                        {t("contact.page.parking.desc")}
                       </p>
                     </div>
                   </div>
@@ -211,10 +212,10 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Frequently Asked <span className="text-gold">Questions</span>
+              {t("contact.page.faq.title.left")} <span className="text-gold">{t("contact.page.faq.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about visiting Casino El Rancho
+              {t("contact.page.faq.desc")}
             </p>
           </div>
 

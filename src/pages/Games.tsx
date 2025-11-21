@@ -6,6 +6,7 @@ import rouletteImage from "@/assets/roulette.jpg";
 import pokerImage from "@/assets/poker.jpg";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
 import slotsImage from "@/../public/slots.jpeg";
+import { useI18n } from "@/i18n";
 
 const Games = () => {
   const gameDetails = [
@@ -86,6 +87,7 @@ const Games = () => {
     }
   ];
 
+  const { t } = useI18n();
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -103,10 +105,10 @@ const Games = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
-            Premium <span className="text-gold">Gaming</span>
+            {t("games.hero.title").split(" ")[0]} <span className="text-gold">{t("games.hero.title").split(" ").slice(1).join(" ")}</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Choose from our selection of classic and modern casino games
+            {t("games.hero.tagline")}
           </p>
         </div>
       </section>
@@ -141,18 +143,18 @@ const Games = () => {
                     </div>
                     
                     <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-                      {game.title}
+                      {t(`games.details.${index + 1}.title`)}
                     </h2>
                     
                     <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                      {game.description}
+                      {t(`games.details.${index + 1}.desc`)}
                     </p>
 
                     <div className="space-y-3 mb-8">
                       {game.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-3">
                           <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0" />
-                          <p className="text-muted-foreground">{feature}</p>
+                          <p className="text-muted-foreground">{t(`games.details.${index + 1}.features.${idx + 1}`)}</p>
                         </div>
                       ))}
                     </div>
@@ -161,14 +163,14 @@ const Games = () => {
                       <div className="flex items-center space-x-3">
                         <Clock className="w-5 h-5 text-gold" />
                         <div>
-                          <p className="text-sm text-muted-foreground">Hours</p>
+                          <p className="text-sm text-muted-foreground">{t("games.details.hoursLabel")}</p>
                           <p className="font-semibold">{game.hours}</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
                         <DollarSign className="w-5 h-5 text-gold" />
                         <div>
-                          <p className="text-sm text-muted-foreground">Minimum Bet</p>
+                          <p className="text-sm text-muted-foreground">{t("games.details.minBetLabel")}</p>
                           <p className="font-semibold">{game.minBet}</p>
                         </div>
                       </div>
@@ -186,34 +188,34 @@ const Games = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              Gaming <span className="text-gold">Etiquette</span>
+              {t("games.etiquette.title.left")} <span className="text-gold">{t("games.etiquette.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12">
-              Help us maintain a premium experience for all guests
+              {t("games.etiquette.tagline")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
                 <Users className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Respect Others</h3>
+                <h3 className="text-xl font-semibold mb-3">{t("games.etiquette.items.1.title")}</h3>
                 <p className="text-muted-foreground">
-                  Be courteous to dealers and fellow players. Keep conversations friendly and avoid disruptive behavior.
+                  {t("games.etiquette.items.1.desc")}
                 </p>
               </div>
 
               <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
                 <Clock className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Play at Pace</h3>
+                <h3 className="text-xl font-semibold mb-3">{t("games.etiquette.items.2.title")}</h3>
                 <p className="text-muted-foreground">
-                  Make decisions promptly to keep the game flowing. Ask dealers if you need clarification on rules.
+                  {t("games.etiquette.items.2.desc")}
                 </p>
               </div>
 
               <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
                 <Heart className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Dress Code</h3>
+                <h3 className="text-xl font-semibold mb-3">{t("games.etiquette.items.3.title")}</h3>
                 <p className="text-muted-foreground">
-                  Smart casual attire required. No beachwear, athletic wear, or overly casual clothing after 8 PM.
+                  {t("games.etiquette.items.3.desc")}
                 </p>
               </div>
             </div>
@@ -227,14 +229,14 @@ const Games = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            Ready to <span className="text-gold">Play?</span>
+            {t("games.cta.title.left")} <span className="text-gold">{t("games.cta.title.right")}</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join us for an unforgettable gaming experience
+            {t("games.hero.tagline")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gold hover:bg-gold-dark text-background font-semibold shadow-gold">
-              Plan Your Visit
+              {t("games.cta.primary")}
             </Button>
             <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold/10 hidden">
               View VIP Benefits

@@ -2,6 +2,7 @@ import cocktailsImage from "@/assets/cocktails.jpg";
 import { Wine, Coffee, Utensils } from "lucide-react";
 
 const DiningSection = () => {
+  const { t } = useI18n();
   return (
     <section className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
@@ -19,12 +20,10 @@ const DiningSection = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              Dining & <span className="text-gold">Lounge</span>
+              {t("home.dining.title.left")} & <span className="text-gold">{t("home.dining.title.right")}</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Indulge in our premium bar and lounge experience. From artisan cocktails 
-              crafted by expert mixologists to a curated selection of fine wines and spirits, 
-              every detail is designed to elevate your evening.
+              {t("home.dining.tagline")}
             </p>
 
             <div className="space-y-6">
@@ -33,9 +32,9 @@ const DiningSection = () => {
                   <Wine className="w-6 h-6 text-gold" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Premium Bar</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t("home.dining.item1.title")}</h3>
                   <p className="text-muted-foreground">
-                    Signature cocktails, rare spirits, and vintage wines
+                    {t("home.dining.item1.desc")}
                   </p>
                 </div>
               </div>
@@ -45,9 +44,9 @@ const DiningSection = () => {
                   <Coffee className="w-6 h-6 text-gold" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Lounge Atmosphere</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t("home.dining.item2.title")}</h3>
                   <p className="text-muted-foreground">
-                    Luxurious seating with ambient lighting and live music
+                    {t("home.dining.item2.desc")}
                   </p>
                 </div>
               </div>
@@ -57,9 +56,9 @@ const DiningSection = () => {
                   <Utensils className="w-6 h-6 text-gold" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Gourmet Bites</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t("home.dining.item3.title")}</h3>
                   <p className="text-muted-foreground">
-                    Premium snacks and culinary delights to complement your drinks
+                    {t("home.dining.item3.desc")}
                   </p>
                 </div>
               </div>
@@ -72,3 +71,4 @@ const DiningSection = () => {
 };
 
 export default DiningSection;
+import { useI18n } from "@/i18n";

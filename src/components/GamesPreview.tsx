@@ -3,6 +3,7 @@ import pokerImage from "@/assets/poker.jpg";
 import heroCasinoImage from "@/assets/hero-casino.jpg";
 import slotsImage from "@/../public/slots.jpeg";
 import { Dices, Heart, Sparkles, Zap } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 const games = [
   {
@@ -32,6 +33,7 @@ const games = [
 ];
 
 const GamesPreview = () => {
+  const { t } = useI18n();
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -40,7 +42,7 @@ const GamesPreview = () => {
             Gaming <span className="text-gold">Excellence</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose from our diverse selection of premium gaming experiences
+            {t("games.hero.tagline")}
           </p>
         </div>
 
