@@ -1,6 +1,6 @@
 import { Facebook, Instagram } from "lucide-react";
 import { NavLink } from "./NavLink";
-import logoElRancho from "@/assets/logoelrancho.webp";
+// uses logo from public directory
 import { useI18n } from "@/i18n";
 
 const Footer = () => {
@@ -13,9 +13,9 @@ const Footer = () => {
           <div>
             <NavLink to="/" className="inline-block mb-4">
               <img
-                src={logoElRancho}
+                src="/logoelranchoclean.png"
                 alt="Casino El Rancho"
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain drop-shadow-md"
               />
             </NavLink>
             <p className="text-muted-foreground mb-4">

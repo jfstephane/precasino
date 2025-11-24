@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import logoElRancho from "@/assets/logoelrancho.webp";
+// uses logo from public directory
 
 // Set favicon to the El Rancho logo
 (() => {
@@ -12,8 +12,8 @@ import logoElRancho from "@/assets/logoelrancho.webp";
       link.rel = 'icon';
       document.head.appendChild(link);
     }
-    link.type = 'image/webp';
-    link.href = logoElRancho;
+    link.type = 'image/png';
+    link.href = '/logoelranchoclean.png';
   } catch (e) {
     // noop: favicon setup failure should not block app rendering
   }

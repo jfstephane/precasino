@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import logoElRancho from "@/assets/logoelrancho.webp";
+// uses logo from public directory
 import { useI18n } from "@/i18n";
 
 const Navigation = () => {
@@ -24,9 +24,9 @@ const Navigation = () => {
           {/* Logo */}
           <NavLink to="/" className="flex items-center">
             <img
-              src={logoElRancho}
+              src="/logoelranchoclean.png"
               alt="Casino El Rancho"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain drop-shadow-md"
             />
             <span className="sr-only">Casino El Rancho</span>
           </NavLink>
